@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31105.61
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NationalChampionship.Data", "Data\NationalChampionship.Data.csproj", "{AED5FEDC-B660-4D5F-83C8-D557DCE0F907}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NationalChampionship.Repository", "Repository\NationalChampionship.Repository.csproj", "{2B769B85-A792-4579-B6B7-527473DD5C94}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NationalChampionship.Logic", "Logic\NationalChampionship.Logic.csproj", "{DD2B8E97-F18C-408B-9A7C-3FBB1FC467D1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NationalChampionship.API", "API\NationalChampionship.API.csproj", "{1526EC46-B870-428C-9336-ACF032E82C45}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NationalChampionship", "NationalChampionship\NationalChampionship.csproj", "{E8E600DD-35A7-4E46-A5D9-660EA487E6E1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NationalChampionship.WPFClient", "WPFClient\NationalChampionship.WPFClient.csproj", "{FD34BD24-3066-464D-95D6-9C612AE6DF50}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AED5FEDC-B660-4D5F-83C8-D557DCE0F907}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AED5FEDC-B660-4D5F-83C8-D557DCE0F907}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AED5FEDC-B660-4D5F-83C8-D557DCE0F907}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AED5FEDC-B660-4D5F-83C8-D557DCE0F907}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B769B85-A792-4579-B6B7-527473DD5C94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B769B85-A792-4579-B6B7-527473DD5C94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B769B85-A792-4579-B6B7-527473DD5C94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B769B85-A792-4579-B6B7-527473DD5C94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD2B8E97-F18C-408B-9A7C-3FBB1FC467D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD2B8E97-F18C-408B-9A7C-3FBB1FC467D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD2B8E97-F18C-408B-9A7C-3FBB1FC467D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD2B8E97-F18C-408B-9A7C-3FBB1FC467D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1526EC46-B870-428C-9336-ACF032E82C45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1526EC46-B870-428C-9336-ACF032E82C45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1526EC46-B870-428C-9336-ACF032E82C45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1526EC46-B870-428C-9336-ACF032E82C45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8E600DD-35A7-4E46-A5D9-660EA487E6E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8E600DD-35A7-4E46-A5D9-660EA487E6E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8E600DD-35A7-4E46-A5D9-660EA487E6E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8E600DD-35A7-4E46-A5D9-660EA487E6E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD34BD24-3066-464D-95D6-9C612AE6DF50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD34BD24-3066-464D-95D6-9C612AE6DF50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD34BD24-3066-464D-95D6-9C612AE6DF50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD34BD24-3066-464D-95D6-9C612AE6DF50}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C3BAD3E2-5C8E-4E5B-BAD8-931F63F70D2B}
+	EndGlobalSection
+EndGlobal

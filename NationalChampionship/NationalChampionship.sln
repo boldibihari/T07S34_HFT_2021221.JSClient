@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NationalChampionship.API", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NationalChampionship", "NationalChampionship\NationalChampionship.csproj", "{E8E600DD-35A7-4E46-A5D9-660EA487E6E1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NationalChampionship.WPFClient", "WPFClient\NationalChampionship.WPFClient.csproj", "{FD34BD24-3066-464D-95D6-9C612AE6DF50}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JSClient", "JSClient\JSClient.csproj", "{8F79074E-37D8-44A2-80C8-665499134C8B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,10 +41,10 @@ Global
 		{E8E600DD-35A7-4E46-A5D9-660EA487E6E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E8E600DD-35A7-4E46-A5D9-660EA487E6E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E8E600DD-35A7-4E46-A5D9-660EA487E6E1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FD34BD24-3066-464D-95D6-9C612AE6DF50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FD34BD24-3066-464D-95D6-9C612AE6DF50}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FD34BD24-3066-464D-95D6-9C612AE6DF50}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FD34BD24-3066-464D-95D6-9C612AE6DF50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F79074E-37D8-44A2-80C8-665499134C8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F79074E-37D8-44A2-80C8-665499134C8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F79074E-37D8-44A2-80C8-665499134C8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F79074E-37D8-44A2-80C8-665499134C8B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

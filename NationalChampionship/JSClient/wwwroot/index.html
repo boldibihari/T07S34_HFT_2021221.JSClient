@@ -2,9 +2,80 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title></title>
+    <title>NationalChampionship</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <h1>National Championship</h1>
+    <div id="loaded">
+        <header><h1>NationalChampionship</h1></header>
+        <select id="clubs" onchange="selectClub()"></select>
+
+        <section>
+            <nav>
+                <div id="club"></div>
+                <div id="manager"></div>
+            </nav>
+
+            <article>
+                <h1>Players</h1>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Country</th>
+                            <th>Birthdate</th>
+                            <th>Position</th>
+                            <th>Shirt number</th>
+                            <th>Height</th>
+                            <th>Preferred foot</th>
+                            <th>Value</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="resultarea">
+                    </tbody>
+                </table>
+            </article>
+
+            <nav>
+                <div id="formdiv">
+                    <label>Name</label>
+                    <input id="name" type="text" />
+                    <label>Code</label>
+                    <input id="code" type="text">
+                    <label>Country</label>
+                    <input id="country" type="text">
+                    <label>Birthdate</label>
+                    <input id="birthdate" type="date" />
+                    <label>Position</label>
+                    <select id="position">
+                        <option id="goalkeeper" value="0">Goalkeeper</option>
+                        <option id="defender" value="1">Defender</option>
+                        <option id="midfielder" value="2">Midfielder</option>
+                        <option id="forward" value="3">Forward</option>
+                    </select>
+                    <label>Shirt number</label>
+                    <input id="shirtnumber" type="number" />
+                    <label>Height</label>
+                    <input id="height" type="number" />
+                    <label>Preferred foot</label>
+                    <select id="preferredfoot">
+                        <option id="left" value="0">Left</option>
+                        <option id="right" value="1">Right</option>
+                        <option id="both" value="2">Both</option>
+                    </select>
+                    <label>Market value</label>
+                    <input id="value" type="text" />
+                    <button type="button" onclick="addPlayer()">Add</button>
+                </div>
+            </nav>
+        </section>
+    </div>
+    <div id="not_loaded">
+        <label>Loading...</label>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/6.0.1/signalr.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

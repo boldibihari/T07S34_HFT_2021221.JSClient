@@ -108,10 +108,10 @@ namespace NationalChampionship.API
             app.UseRouting();
 
             app.UseCors(x => x
-               .AllowAnyMethod()
-               .AllowAnyHeader()
-               .SetIsOriginAllowed(origin => true)
-               .AllowCredentials());
+                .AllowCredentials()
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                .WithOrigins("https://localhost:44366"));
 
             app.UseAuthentication();
 

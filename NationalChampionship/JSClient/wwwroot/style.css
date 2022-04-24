@@ -1,2 +1,113 @@
-﻿body {
+﻿* {
+    box-sizing: border-box;
+    
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: darkseagreen;
+}
+
+header {
+    background-color: darkolivegreen;
+    padding: 15px;
+    text-align: center;
+    font-size: 30px;
+    color: white;
+}
+
+header,h1  {
+    background-color: darkolivegreen;
+}
+
+section {
+    display: -webkit-flex;
+    display: flex;
+}
+
+nav {
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    background-color: darkolivegreen;
+    padding: 20px;
+    border-style: solid;
+    margin: 10px;
+    padding: 10px;
+    color: mintcream;
+}
+
+#club, #manager {
+    display: flex;
+    flex-direction: column;
+    border-style: solid;
+    border-width: 1px;
+    margin: 10px;
+    padding: 10px;
+    color: mintcream;
+}
+
+#formdiv {
+    display: flex;
+    flex-direction: column;
+    border-style: solid;
+    border-width: 1px;
+    margin: 10px;
+    padding: 10px;
+    color: mintcream;
+}
+
+#formdiv, label, input, button{
+    margin: 5px;
+}
+
+article {
+    -webkit-flex: 3;
+    -ms-flex: 3;
+    flex: 3;
+    background-color: darkolivegreen;
+    padding: 10px;
+    color: mintcream;
+}
+
+@media (max-width: 600px) {
+    section {
+        -webkit-flex-direction: column;
+        flex-direction: column;
+    }
+}
+
+select {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-family: Arial;
+    padding: 10px;
+}
+table {
+    width: 100%;
+    color: mintcream;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 5px;
+    text-align: center;
+}
+
+th {
+    background-color: darkseagreen;
+}
+
+#not_loaded {
+    color: mintcream;
+    position: absolute;
+    top: 50%;
+    left: 50%;
 }

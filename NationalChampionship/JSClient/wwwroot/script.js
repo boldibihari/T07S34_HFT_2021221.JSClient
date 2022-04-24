@@ -3,8 +3,9 @@ setupSignalR();
 let isLoading = true;
 loading();
 let clubs = [];
+let selectedClubIndex = 0;
 let selectedClub = null;
-getdata().then(x => loading());
+getData().then(x => updateForm()).then(x => loading());
 
 function setupSignalR() {
     connection = new signalR.HubConnectionBuilder()
@@ -12,17 +13,16 @@ function setupSignalR() {
         .configureLogging(signalR.LogLevel.Information)
         .build();
 
-    connection.on("ClubCreated", (user, message) => {
-        getdata();
+    connection.on("ClubUpdated", (club, message) => {
+        selectedClub = club;
     });
 
     connection.on("PlayerCreated", (player, message) => {
         selectedClub.players.push(player);
-        console.log(selectedClub.players);
     });
 
     connection.on("ClubDeleted", (user, message) => {
-        getdata();
+        getData();
     });
 
     connection.on("PlayerDeleted", (player, message) => {
@@ -48,18 +48,26 @@ async function start() {
 function selectClub() {
     const select = document.getElementById("clubs");
     selectedClub = clubs[select.selectedIndex];
-    console.log(selectedClub);
+    selectedClubIndex = select.selectedIndex;
     players();
     club();
     manager();
+    updateForm();
 }
 
-async function getdata() {
+function updateForm() {
+    document.getElementById('clubname').value = selectedClub.clubName;
+    document.getElementById('colour').value = selectedClub.clubColour;
+    document.getElementById('city').value = selectedClub.clubCity;
+    document.getElementById('founded').value = selectedClub.clubFounded;
+}
+
+async function getData() {
     await fetch('https://localhost:44374/Club')
         .then(x => x.json())
         .then(y => {
             clubs = y;
-            selectedClub = clubs[0];
+            selectedClub = clubs[selectedClubIndex];
             display();
             players();
             club();
@@ -73,11 +81,10 @@ function deleteClub(id) {
         headers: { 'Content-Type': 'application/json', },
         body: null
     })
-        .then(response => response)
-        .then(data => {
+    .then(response => response)
+    .then(data => {
             console.log('Success:', data);
-        })
-        .catch((error) => { console.error('Error:', error); });
+    }).catch((error) => { console.error('Error:', error); });
 }
 
 function deletePlayer(id) {
@@ -86,12 +93,11 @@ function deletePlayer(id) {
         headers: { 'Content-Type': 'application/json', },
         body: null
     })
-        .then(response => response)
-        .then(data => {
+    .then(response => response)
+    .then(data => {
             console.log('Success:', data);
             players();
-        })
-        .catch((error) => { console.error('Error:', error); });
+    }).catch((error) => { console.error('Error:', error); });
 }
 
 function display() {
@@ -101,6 +107,9 @@ function display() {
         let option = document.createElement("option");
         option.text = t.clubName;
         option.value = t;
+        if (t.clubId == selectedClub.clubId) {
+            option.selected = true;
+        }
         select.add(option);
     });
 }
@@ -134,6 +143,7 @@ function preferredFoot(foot) {
 
 function players() {
     document.getElementById('resultarea').innerHTML = "";
+    selectedClub.players.sort((a, b) => a.playerPosition - b.playerPosition);
     selectedClub.players.forEach(player => {
         document.getElementById('resultarea').innerHTML +=
             "<tr><td>" + player.playerName + "</td><td>" + player.playerCountry +
@@ -184,7 +194,7 @@ function addPlayer() {
     let shirtnumber = document.getElementById('shirtnumber').value;
     let height = document.getElementById('height').value;
     let preferredfoot = parseInt(document.getElementById('preferredfoot').value);
-    let value = parseInt(document.getElementById('value').value);
+    let value = document.getElementById('value').value;
 
     fetch('https://localhost:44374/Player/' + selectedClub.clubId, {
         method: 'POST',
@@ -217,6 +227,33 @@ function addPlayer() {
         document.getElementById('height').value = '';
         document.getElementById('preferredfoot').value = 0;
         document.getElementById('value').value = '';
+    }).catch((error) => { console.error('Error:', error); });
+}
+
+function updateClub() {
+    let name = document.getElementById('clubname').value;
+    let colour = document.getElementById('colour').value;
+    let city = document.getElementById('city').value;
+    let founded = document.getElementById('founded').value;
+
+    fetch('https://localhost:44374/Club/' + selectedClub.clubId, {
+        method: 'PUT',
+        headers: { 'Content-Type': "application/json" },
+        body: JSON.stringify({
+            clubId: selectedClub.clubId,
+            clubName: name,
+            clubColour: colour,
+            clubCity: city,
+            clubFounded: founded,
+            stadium: selectedClub.stadium,
+            manager: selectedClub.manager,
+            players: selectedClub.players,
+            users: selectedClub.users
+        })
+    })
+    .then(response => response)
+        .then(data => {
+        getData();
     }).catch((error) => { console.error('Error:', error); });
 }
 

@@ -14,6 +14,17 @@
             <nav>
                 <div id="club"></div>
                 <div id="manager"></div>
+                <div id="formdiv">
+                    <label>Name</label>
+                    <input id="clubname" type="text" />
+                    <label>Colour</label>
+                    <input id="colour" type="text">
+                    <label>City</label>
+                    <input id="city" type="text" />
+                    <label>Founded</label>
+                    <input id="founded" type="number" />
+                    <button type="button" onclick="updateClub()">Update club</button>
+                </div>
             </nav>
 
             <article>
@@ -65,8 +76,8 @@
                         <option id="both" value="2">Both</option>
                     </select>
                     <label>Market value</label>
-                    <input id="value" type="text" />
-                    <button type="button" onclick="addPlayer()">Add</button>
+                    <input id="value" type="number" step="0.01" />
+                    <button type="button" onclick="addPlayer()">Add player</button>
                 </div>
             </nav>
         </section>
